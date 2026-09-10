@@ -1,6 +1,7 @@
 import { ArrowDownRight, ArrowUpRight, CalendarDays, Check, ChevronRight, Clock3, Dumbbell, HeartPulse, MapPin, Menu, MonitorSmartphone, Sparkles, UsersRound } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
-const highlights = [
+const highlights: Array<[string, string, LucideIcon]> = [
   ['Treino com direcao', 'Planos que acompanham seu ritmo e seus objetivos.', Dumbbell],
   ['Comunidade que impulsiona', 'Um ambiente feito para evoluir com constancia.', UsersRound],
   ['Cuidado de verdade', 'Orientacao para treinar com mais seguranca e confianca.', HeartPulse],
@@ -41,7 +42,7 @@ export default function Home() {
 
       <section className="experience-section" id="experiencia">
         <div className="section-heading"><div><p className="eyebrow"><span className="eyebrow-dot" /> UMA EXPERIENCIA COMPLETA</p><h2>O seu treino merece mais intencao.</h2></div><p>Estrutura, orientacao e recursos que deixam sua rotina mais leve e consistente.</p></div>
-        <div className="highlight-grid">{highlights.map(([title, text, Icon], index) => { const FeatureIcon = Icon as typeof Dumbbell; return <article className="highlight-card" key={title as string}><div className="card-top"><span>0{index + 1}</span><FeatureIcon size={25} /></div><h3>{title}</h3><p>{text}</p></article>; })}</div>
+         <div className="highlight-grid">{highlights.map(([title, text, FeatureIcon], index) => <article className="highlight-card" key={title}><div className="card-top"><span>0{index + 1}</span><FeatureIcon size={25} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="app-section" id="app">
